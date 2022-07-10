@@ -82,7 +82,7 @@ const App: React.FC = () => {
         <table className="w-full border-spacing-10 border-collapse table-fixed">
           <thead className="border-b-2 text-left">
             <tr>
-              {["월", "화", "수", "목", "금", "토"].map((day, index) => (
+              {["월", "화", "수", "목", "금"].map((day, index) => (
                 <th key={index} className="pb-2">
                   {day}
                 </th>
@@ -107,11 +107,8 @@ const App: React.FC = () => {
                 <div className="text-500 my-3 text-xl">7</div>
               </td>
               <td>
-                <div className="text-500 my-3 text-xl">8</div>
-              </td>
-              <td>
                 <div className="text-500 my-3 text-xl font-bold">
-                  9<span className="px-1 text-sm">[오늘]</span>
+                  8<span className="px-1 text-sm">[오늘]</span>
                 </div>
               </td>
             </tr>
