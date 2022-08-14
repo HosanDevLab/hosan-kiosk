@@ -1,9 +1,6 @@
-import { useState } from "react";
 import logo from "./hosan.png";
 
 const App: React.FC = () => {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="container mx-auto px-5 pt-8 pb-16">
       <div className="flex items-center gap-8 mb-16">
