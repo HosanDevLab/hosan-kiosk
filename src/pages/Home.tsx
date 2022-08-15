@@ -3,7 +3,7 @@ import Header from "../components/Header";
 
 export default function Home() {
   return (
-    <div className="mt-8 container mx-auto px-4 pb-16 animate-floatup">
+    <div className="mt-8 container mx-auto px-12 pb-16 animate-floatup">
       <Header />
       <h2
         className="mb-3 text-4xl text-gray-600"
