@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { FiArrowLeft, FiChevronDown, FiX } from "react-icons/fi";
+import { FiChevronDown, FiX } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import img1 from "../assets/gallery/1.png";
 import img2 from "../assets/gallery/2.png";
 import { animateScroll } from "react-scroll";
+import InpageHeader from "../components/InpageHeader";
 
 const SECTIONS = [
   {
@@ -66,42 +67,20 @@ export default function Intro() {
 
   return (
     <>
-      <div
-        className={`fixed z-[99999] grid grid-cols-3 items-center h-16 top-0 left-0 right-0 px-4 w-full animate-fadein transition-all duration-300 ${
-          showImage
-            ? "border-b border-transparent"
-            : "border-b border-gray-200/25 bg-black/10 backdrop-blur-md"
-        }`}
-      >
-        <div className="col-span-1">
+      {showImage ? (
+        <div className="fixed top-0 left-0 right-0 px-4 py-2.5 z-[9999]">
           <button
             type="button"
-            className={`flex items-center gap-3 py-2 px-5 my-auto rounded-xl text-xl border ${
-              showImage
-                ? "text-black shadow-xl border-gray-200"
-                : "text-white border-white/30"
-            } hover:bg-white/50 hover:text-black hover:shadow-xl transition-all duration-300`}
-            onClick={(e) => {
-              if (showImage) {
-                setShowImage(false);
-              } else {
-                navigate("/");
-              }
-            }}
+            className="flex items-center gap-3 py-2 px-5 my-auto rounded-2xl text-xl border border-zinc-400 text-gray-700 border-white/30 hover:bg-white/50 hover:text-black shadow-xl transition-all duration-300"
+            onClick={() => setShowImage(false)}
           >
-            {showImage ? <FiX size={28} /> : <FiArrowLeft size={28} />}
-            {showImage ? "닫기" : "메인으로"}
+            <FiX size={28} />
+            닫기
           </button>
         </div>
-        <h4
-          className={`col-span-1 text-center font-semibold text-white transition-all duration-300 ${
-            showImage ? "opacity-0" : ""
-          }`}
-        >
-          호산고 갤러리
-        </h4>
-        <div className="col-span-1"></div>
-      </div>
+      ) : (
+        <InpageHeader title="호산고 갤러리" className="text-white" />
+      )}
 
       {SECTIONS.map((section) => {
         return (
@@ -111,6 +90,7 @@ export default function Intro() {
               background: `url(${section.backgroundImage}) center no-repeat`,
               backgroundSize: showImage ? "contain" : "cover",
             }}
+            onClick={() => showImage && setShowImage(false)}
           >
             <div
               className={`absolute top-0 left-0 right-0 bottom-0 transition-all duration-300 ${

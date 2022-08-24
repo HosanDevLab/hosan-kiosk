@@ -39,28 +39,38 @@ export default function Home() {
             </div>
           </div>
         </Link>
-        <div className="col-span-1 text-white p-5 h-40 bg-emerald-500 rounded-2xl shadow-2xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-          <div className="text-center w-full" style={{ wordBreak: "keep-all" }}>
-            <h3 className="mb-2 flex items-center justify-center">
-              교내 길 찾기
-              <i className="xi-angle-right ml-2" />
-            </h3>
-            <hr className="my-3 mx-2" />
-            <div>
-              학부모님 또는 방문객이신가요? 시설물 위치를 안내해드립니다.
+        <Link to="/pathfinding">
+          <div className="col-span-1 text-white p-5 h-40 bg-emerald-500 rounded-2xl shadow-2xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+            <div
+              className="text-center w-full"
+              style={{ wordBreak: "keep-all" }}
+            >
+              <h3 className="mb-2 flex items-center justify-center">
+                교내 길 찾기
+                <i className="xi-angle-right ml-2" />
+              </h3>
+              <hr className="my-3 mx-2" />
+              <div>
+                학부모님 또는 방문객이신가요? 시설물 위치를 안내해드립니다.
+              </div>
             </div>
           </div>
-        </div>
-        <div className="col-span-1 text-white p-5 h-40 bg-sky-500 rounded-2xl shadow-2xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-          <div className="text-center w-full" style={{ wordBreak: "keep-all" }}>
-            <h3 className="mb-2 flex items-center justify-center">
-              급식 메뉴 확인하기
-              <i className="xi-angle-right ml-2" />
-            </h3>
-            <hr className="my-3 mx-2" />
-            <div>최근 급식 메뉴를 확인할 수 있습니다.</div>
+        </Link>
+        <Link to="/meal">
+          <div className="col-span-1 text-white p-5 h-40 bg-sky-500 rounded-2xl shadow-2xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+            <div
+              className="text-center w-full"
+              style={{ wordBreak: "keep-all" }}
+            >
+              <h3 className="mb-2 flex items-center justify-center">
+                급식 메뉴 확인하기
+                <i className="xi-angle-right ml-2" />
+              </h3>
+              <hr className="my-3 mx-2" />
+              <div>최근 급식 메뉴를 확인할 수 있습니다.</div>
+            </div>
           </div>
-        </div>
+        </Link>
         <div className="col-span-1 text-white p-5 h-40 bg-violet-500 rounded-2xl shadow-2xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 cursor-pointer">
           <div className="text-center w-full" style={{ wordBreak: "keep-all" }}>
             <h3 className="mb-2 flex items-center justify-center">
