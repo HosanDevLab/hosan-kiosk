@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { FiArrowLeft } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface InpageHeaderProps
   extends React.PropsWithoutRef<JSX.IntrinsicElements["div"]> {
@@ -24,7 +24,7 @@ export default function InpageHeader({
         {...props}
       >
         <div className="col-span-1">
-          <Link to="/">
+          <Link href="/">
             <button
               type="button"
               className="flex items-center gap-3 py-2 px-5 my-auto rounded-xl text-xl border border-white/30 hover:bg-white/50 hover:text-black hover:shadow-xl transition-all duration-300"

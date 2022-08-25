@@ -1,23 +1,22 @@
 import { useEffect, useState } from "react";
 import { FiChevronDown, FiX } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
-import img1 from "../assets/gallery/1.png";
-import img2 from "../assets/gallery/2.png";
 import { animateScroll } from "react-scroll";
 import InpageHeader from "../components/InpageHeader";
+import { useRouter } from "next/router";
+import { NextPage } from "next";
 
 const SECTIONS = [
   {
     title: "벚꽃이 예쁜 봄의 학교, 호산고",
     description: "학교 안팎의 벚꽃은 봄이 되면 최고의 경관을 보여줍니다.",
-    backgroundImage: img1,
+    backgroundImage: "/gallery/1.png",
     buttons: [],
   },
   {
     title: "아름다운 학교, 호산고",
     description:
       "개교한 지 얼마 되지 않아 역사는 짧지만 앞날은 끝없이 무한합니다. 깨끗하고 다양한 최신 시설이 갖추어진 호산고등학교입니다.",
-    backgroundImage: img2,
+    backgroundImage: "/gallery/2.png",
     buttons: [
       {
         label: "시설 둘러보기",
@@ -27,12 +26,12 @@ const SECTIONS = [
   },
 ];
 
-export default function Intro() {
+const Intro: NextPage = () => {
   const [showImage, setShowImage] = useState(false);
   const [page, setPage] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
 
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handlePageChange = () => {
     if (isScrolling) return;
@@ -82,9 +81,10 @@ export default function Intro() {
         <InpageHeader title="호산고 갤러리" className="text-white" />
       )}
 
-      {SECTIONS.map((section) => {
+      {SECTIONS.map((section, index) => {
         return (
           <section
+            key={index}
             className="h-screen w-screen flex pt-10 relative px-8"
             style={{
               background: `url(${section.backgroundImage}) center no-repeat`,
@@ -119,11 +119,12 @@ export default function Intro() {
                 >
                   사진 보기
                 </button>
-                {section.buttons.map((button) => (
+                {section.buttons.map((button, index) => (
                   <button
+                    key={index}
                     type="button"
                     className="bg-white/75 text-black/75 text-xl font-semibold rounded-xl px-7 py-2.5"
-                    onClick={() => navigate(button.link)}
+                    onClick={() => router.push(button.link)}
                   >
                     {button.label}
                   </button>
@@ -147,4 +148,6 @@ export default function Intro() {
       </div>
     </>
   );
-}
+};
+
+export default Intro;
