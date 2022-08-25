@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import type { NextPage } from "next";
+import Link from "next/link";
 import Header from "../components/Header";
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <div className="mt-8 container mx-auto px-12 pb-16 animate-floatup">
       <Header />
@@ -11,7 +12,7 @@ export default function Home() {
           fontFamily: "InkLipquid",
         }}
       >
-        "넓은 세상을 가슴에 품자"
+        &quot;넓은 세상을 가슴에 품자&quot;
       </h2>
       <h1>
         안녕하세요, <span className="font-bold">호산고등학교</span>입니다.
@@ -24,7 +25,7 @@ export default function Home() {
       </div>
 
       <div className="grid grid-cols-2 gap-4 font-semibold">
-        <Link to="/intro">
+        <Link href="/intro">
           <div className="col-span-1 text-white p-5 h-40 bg-orange-400 rounded-2xl shadow-2xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 cursor-pointer">
             <div
               className="text-center w-full"
@@ -39,7 +40,7 @@ export default function Home() {
             </div>
           </div>
         </Link>
-        <Link to="/pathfinding">
+        <Link href="/pathfinding">
           <div className="col-span-1 text-white p-5 h-40 bg-emerald-500 rounded-2xl shadow-2xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 cursor-pointer">
             <div
               className="text-center w-full"
@@ -56,7 +57,7 @@ export default function Home() {
             </div>
           </div>
         </Link>
-        <Link to="/meal">
+        <Link href="/meal">
           <div className="col-span-1 text-white p-5 h-40 bg-sky-500 rounded-2xl shadow-2xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 cursor-pointer">
             <div
               className="text-center w-full"
@@ -178,4 +179,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default Home;

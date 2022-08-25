@@ -1,10 +1,11 @@
-import logo from "../hosan.png";
+import logo from "../assets/hosan.png";
+import Image from "next/image";
 
 export default function Header() {
   return (
     <div className="flex items-center gap-8 my-8">
       <hr className="flex-grow" />
-      <img src={logo} className="w-14 h-14" />
+      <Image src={logo} width={56} height={56} alt="" />
       <hr className="flex-grow" />
     </div>
   );

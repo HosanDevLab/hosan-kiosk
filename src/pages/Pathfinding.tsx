@@ -1,7 +1,9 @@
 import InpageHeader from "../components/InpageHeader";
-import bgImage from "../assets/gallery/3.png";
+import { NextPage } from "next";
 
-export default function Pathfinding() {
+const BG_IMAGE = "/gallery/3.png";
+
+const Pathfinding: NextPage = () => {
   return (
     <>
       <InpageHeader title="교내 길 찾기" className="text-white" />
@@ -9,7 +11,7 @@ export default function Pathfinding() {
       <div
         className="w-screen min-h-screen relative"
         style={{
-          background: `url(${bgImage}) center no-repeat`,
+          background: `url(${BG_IMAGE}) center no-repeat`,
         }}
       >
         <div className="absolute animate-floatup text-white inset-0 transition-all duration-30 backdrop-blur-[6px]">
@@ -39,6 +41,7 @@ export default function Pathfinding() {
                   "보건실",
                 ].map((one) => (
                   <button
+                    key={one}
                     type="button"
                     className="px-4 py-1.5 text-xl font-medium rounded-xl bg-white/50 text-black"
                   >
@@ -60,6 +63,7 @@ export default function Pathfinding() {
               <div className="flex flex-wrap gap-2">
                 {["교실", "음악실", "미술실", "과학실"].map((one) => (
                   <button
+                    key={one}
                     type="button"
                     className="px-4 py-1.5 text-xl font-medium rounded-xl bg-white/50 text-black"
                   >
@@ -90,4 +94,6 @@ export default function Pathfinding() {
       </div>
     </>
   );
-}
+};
+
+export default Pathfinding;
