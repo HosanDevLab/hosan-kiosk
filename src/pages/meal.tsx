@@ -58,7 +58,7 @@ const Meal: NextPage = () => {
                 </div>
               </div>
             );
-          }) ?? <div className="w-full text-center">불러오는 중</div>}
+          }) ?? <div className="w-full text-center text-3xl">불러오는 중</div>}
         </div>
       </div>
     </>
