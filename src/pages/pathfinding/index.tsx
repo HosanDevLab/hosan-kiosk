@@ -1,7 +1,8 @@
-import InpageHeader from "../components/InpageHeader";
-import { NextPage } from "next";
+import InpageHeader from '../../components/InpageHeader';
+import { NextPage } from 'next';
+import Link from 'next/link';
 
-const BG_IMAGE = "/gallery/3.png";
+const BG_IMAGE = '/gallery/3.png';
 
 const Pathfinding: NextPage = () => {
   return (
@@ -9,9 +10,10 @@ const Pathfinding: NextPage = () => {
       <InpageHeader title="교내 길 찾기" className="text-white" />
 
       <div
-        className="w-screen min-h-screen relative"
+        className="w-full min-h-screen relative"
         style={{
           background: `url(${BG_IMAGE}) center no-repeat`,
+          backgroundSize: 'cover',
         }}
       >
         <div className="absolute animate-floatup text-white inset-0 transition-all duration-30 backdrop-blur-[6px]">
@@ -30,15 +32,15 @@ const Pathfinding: NextPage = () => {
 
               <div className="flex flex-wrap gap-2">
                 {[
-                  "행정실",
-                  "2층 본교무실",
-                  "1학년실",
-                  "2학년실",
-                  "3학년실",
-                  "제2교무실",
-                  "시청각실",
-                  "강당",
-                  "보건실",
+                  '행정실',
+                  '2층 본교무실',
+                  '1학년실',
+                  '2학년실',
+                  '3학년실',
+                  '제2교무실',
+                  '시청각실',
+                  '강당',
+                  '보건실',
                 ].map((one) => (
                   <button
                     key={one}
@@ -61,7 +63,7 @@ const Pathfinding: NextPage = () => {
               </div>
 
               <div className="flex flex-wrap gap-2">
-                {["교실", "음악실", "미술실", "과학실"].map((one) => (
+                {['교실', '음악실', '미술실', '과학실'].map((one) => (
                   <button
                     key={one}
                     type="button"
@@ -82,12 +84,14 @@ const Pathfinding: NextPage = () => {
                 <hr className="border-[0.5px] border-gray-300/30 w-full" />
               </div>
 
-              <button
-                type="button"
-                className="px-6 py-3 text-2xl font-medium rounded-2xl bg-white/50 text-black"
-              >
-                직접 찾아보기
-              </button>
+              <Link href="/pathfinding/map" passHref>
+                <button
+                  type="button"
+                  className="px-6 py-3 text-2xl font-medium rounded-2xl bg-white/50 text-black"
+                >
+                  직접 찾아보기
+                </button>
+              </Link>
             </section>
           </div>
         </div>

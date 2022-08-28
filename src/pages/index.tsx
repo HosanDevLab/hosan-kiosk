@@ -1,6 +1,6 @@
-import type { NextPage } from "next";
-import Link from "next/link";
-import Header from "../components/Header";
+import type { NextPage } from 'next';
+import Link from 'next/link';
+import Header from '../components/Header';
 
 const Home: NextPage = () => {
   return (
@@ -9,7 +9,7 @@ const Home: NextPage = () => {
       <h2
         className="mb-3 text-4xl text-gray-600"
         style={{
-          fontFamily: "InkLipquid",
+          fontFamily: 'InkLipquid',
         }}
       >
         &quot;넓은 세상을 가슴에 품자&quot;
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           <div className="col-span-1 text-white p-5 h-40 bg-orange-400 rounded-2xl shadow-2xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 cursor-pointer">
             <div
               className="text-center w-full"
-              style={{ wordBreak: "keep-all" }}
+              style={{ wordBreak: 'keep-all' }}
             >
               <h3 className="mb-2 flex items-center justify-center">
                 호산고 둘러보기
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
           <div className="col-span-1 text-white p-5 h-40 bg-emerald-500 rounded-2xl shadow-2xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 cursor-pointer">
             <div
               className="text-center w-full"
-              style={{ wordBreak: "keep-all" }}
+              style={{ wordBreak: 'keep-all' }}
             >
               <h3 className="mb-2 flex items-center justify-center">
                 교내 길 찾기
@@ -61,7 +61,7 @@ const Home: NextPage = () => {
           <div className="col-span-1 text-white p-5 h-40 bg-sky-500 rounded-2xl shadow-2xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 cursor-pointer">
             <div
               className="text-center w-full"
-              style={{ wordBreak: "keep-all" }}
+              style={{ wordBreak: 'keep-all' }}
             >
               <h3 className="mb-2 flex items-center justify-center">
                 급식 메뉴 확인하기
@@ -73,7 +73,7 @@ const Home: NextPage = () => {
           </div>
         </Link>
         <div className="col-span-1 text-white p-5 h-40 bg-violet-500 rounded-2xl shadow-2xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-          <div className="text-center w-full" style={{ wordBreak: "keep-all" }}>
+          <div className="text-center w-full" style={{ wordBreak: 'keep-all' }}>
             <h3 className="mb-2 flex items-center justify-center">
               학사 일정 확인하기
               <i className="xi-angle-right ml-2" />
@@ -92,7 +92,7 @@ const Home: NextPage = () => {
         <table className="w-full border-spacing-10 border-collapse table-fixed">
           <thead className="border-b-2 text-left">
             <tr>
-              {["월", "화", "수", "목", "금"].map((day, index) => (
+              {['월', '화', '수', '목', '금'].map((day, index) => (
                 <th key={index} className="pb-2">
                   {day}
                 </th>
@@ -109,7 +109,7 @@ const Home: NextPage = () => {
               </td>
               <td>
                 <div className="text-500 my-3 text-xl">6</div>
-                <div className="mb-4 pr-2" style={{ wordBreak: "keep-all" }}>
+                <div className="mb-4 pr-2" style={{ wordBreak: 'keep-all' }}>
                   전국연합 학력평가(3)
                 </div>
               </td>

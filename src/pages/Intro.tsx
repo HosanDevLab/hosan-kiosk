@@ -1,26 +1,26 @@
-import { useEffect, useState } from "react";
-import { FiChevronDown, FiX } from "react-icons/fi";
-import { animateScroll } from "react-scroll";
-import InpageHeader from "../components/InpageHeader";
-import { useRouter } from "next/router";
-import { NextPage } from "next";
+import { useEffect, useState } from 'react';
+import { FiChevronDown, FiX } from 'react-icons/fi';
+import { animateScroll } from 'react-scroll';
+import InpageHeader from '../components/InpageHeader';
+import { useRouter } from 'next/router';
+import { NextPage } from 'next';
 
 const SECTIONS = [
   {
-    title: "벚꽃이 예쁜 봄의 학교, 호산고",
-    description: "학교 안팎의 벚꽃은 봄이 되면 최고의 경관을 보여줍니다.",
-    backgroundImage: "/gallery/1.png",
+    title: '벚꽃이 예쁜 봄의 학교, 호산고',
+    description: '학교 안팎의 벚꽃은 봄이 되면 최고의 경관을 보여줍니다.',
+    backgroundImage: '/gallery/1.png',
     buttons: [],
   },
   {
-    title: "아름다운 학교, 호산고",
+    title: '아름다운 학교, 호산고',
     description:
-      "개교한 지 얼마 되지 않아 역사는 짧지만 앞날은 끝없이 무한합니다. 깨끗하고 다양한 최신 시설이 갖추어진 호산고등학교입니다.",
-    backgroundImage: "/gallery/2.png",
+      '개교한 지 얼마 되지 않아 역사는 짧지만 앞날은 끝없이 무한합니다. 깨끗하고 다양한 최신 시설이 갖추어진 호산고등학교입니다.',
+    backgroundImage: '/gallery/2.png',
     buttons: [
       {
-        label: "시설 둘러보기",
-        link: "/",
+        label: '시설 둘러보기',
+        link: '/',
       },
     ],
   },
@@ -40,7 +40,7 @@ const Intro: NextPage = () => {
     setIsScrolling(true);
     animateScroll.scrollTo(toPage * window.innerHeight, {
       duration: 1500,
-      smooth: "easeInOutQuart",
+      smooth: 'easeInOutQuart',
       ignoreCancelEvents: true,
     });
     setTimeout(async () => {
@@ -57,12 +57,12 @@ const Intro: NextPage = () => {
       window.scrollTo(0, page * window.innerHeight);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, [page]);
+  }, [isScrolling, page]);
 
   return (
     <>
@@ -88,25 +88,25 @@ const Intro: NextPage = () => {
             className="h-screen w-screen flex pt-10 relative px-8"
             style={{
               background: `url(${section.backgroundImage}) center no-repeat`,
-              backgroundSize: showImage ? "contain" : "cover",
+              backgroundSize: showImage ? 'contain' : 'cover',
             }}
             onClick={() => showImage && setShowImage(false)}
           >
             <div
               className={`absolute top-0 left-0 right-0 bottom-0 transition-all duration-300 ${
-                showImage ? "" : "bg-black/30"
+                showImage ? '' : 'bg-black/30'
               }`}
             />
             <div
               className={`my-auto container mx-auto text-white drop-shadow-2xl animate-floatup transition-all duration-300 ${
-                showImage ? "opacity-0 pointer-events-none" : ""
+                showImage ? 'opacity-0 pointer-events-none' : ''
               }`}
             >
               <h1 className="text-6xl font-semibold mb-5">{section.title}</h1>
               <div
                 className="text-[22px] font-light mb-10 w-3/5 leading-relaxed"
                 style={{
-                  wordBreak: "keep-all",
+                  wordBreak: 'keep-all',
                 }}
               >
                 {section.description}
@@ -137,7 +137,7 @@ const Intro: NextPage = () => {
 
       <div
         className={`fixed cursor-pointer flex bottom-0 h-36 left-0 right-0 bg-gradient-to-t from-black/80 ${
-          showImage ? "opacity-0 pointer-events-none" : ""
+          showImage ? 'opacity-0 pointer-events-none' : ''
         }`}
         onClick={handlePageChange}
       >
