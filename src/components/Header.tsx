@@ -1,5 +1,5 @@
-import logo from "../assets/hosan.png";
-import Image from "next/image";
+import logo from '../assets/hosan.png';
+import Image from 'next/image';
 
 export default function Header() {
   return (
