@@ -40,13 +40,39 @@ const Meal: NextPage = () => {
 
             let menus = (row.DDISH_NM as string).split('<br/>');
 
+            let dayStr;
+
+            switch (dt.getDay()) {
+              case 0:
+                dayStr = '일';
+                break;
+              case 1:
+                dayStr = '월';
+                break;
+              case 2:
+                dayStr = '화';
+                break;
+              case 3:
+                dayStr = '수';
+                break;
+              case 4:
+                dayStr = '목';
+                break;
+              case 5:
+                dayStr = '금';
+                break;
+              case 6:
+                dayStr = '토';
+                break;
+            }
+
             return (
               <div
                 key={index}
                 className="flex-shrink-0 bg-white shadow-lg rounded-xl w-5/6 h-2/3 px-16 py-20"
               >
                 <h1 className="text-8xl font-light">
-                  {dt.getMonth() + 1}월 {dt.getDate()}일
+                  {dt.getMonth() + 1}월 {dt.getDate()}일 ({dayStr})
                 </h1>
                 <hr className="border-gray-400 my-12" />
                 <div className="text-5xl">
