@@ -102,9 +102,9 @@ const Intro: NextPage = () => {
                 showImage ? 'opacity-0 pointer-events-none' : ''
               }`}
             >
-              <h1 className="text-6xl font-semibold mb-5">{section.title}</h1>
+              <h1 className="text-7xl font-semibold mb-5">{section.title}</h1>
               <div
-                className="text-[22px] font-light mb-10 w-3/5 leading-relaxed"
+                className="text-4xl font-light mb-10 leading-relaxed"
                 style={{
                   wordBreak: 'keep-all',
                 }}
@@ -114,7 +114,7 @@ const Intro: NextPage = () => {
               <div className="flex gap-4">
                 <button
                   type="button"
-                  className="bg-white/75 text-black/75 text-xl font-semibold rounded-xl px-7 py-2.5"
+                  className="bg-white/75 text-black/75 text-3xl font-medium rounded-xl px-7 py-3"
                   onClick={() => setShowImage(true)}
                 >
                   사진 보기
@@ -123,7 +123,7 @@ const Intro: NextPage = () => {
                   <button
                     key={index}
                     type="button"
-                    className="bg-white/75 text-black/75 text-xl font-semibold rounded-xl px-7 py-2.5"
+                    className="bg-white/75 text-black/75 text-3xl font-medium rounded-xl px-7 py-3"
                     onClick={() => router.push(button.link)}
                   >
                     {button.label}
@@ -141,9 +141,9 @@ const Intro: NextPage = () => {
         }`}
         onClick={handlePageChange}
       >
-        <div className="mx-auto flex items-center gap-4 text-white animate-bounce mt-auto">
+        <div className="mx-auto flex items-center gap-4 text-white animate-bounce mt-auto mb-14">
           <FiChevronDown size={64} color="white" />
-          <span className="text-lg font-medium">탭하여 다음 페이지 보기</span>
+          <span className="text-3xl font-medium">탭하여 다음 페이지 보기</span>
         </div>
       </div>
     </>
