@@ -46,7 +46,7 @@ export default function InpageHeader({
         </h4>
         <div className="col-span-1"></div>
       </div>
-      {spaceHeight && <div className="h-16" />}
+      {spaceHeight && <div className="h-28" />}
     </>
   );
 }
